@@ -1,10 +1,31 @@
 import React, { useState } from "react";
 
-const Tarea = ({ tarea, editandoTarea }) => {
+const Tarea = ({ tarea, editandoTarea, eliminandoTarea }) => {
     const [editarTarea, setEditarTarea] = useState(false);
     const [tareaEditada, setTareaEditada] = useState(tarea.label);
     const [tareaEliminada, setTareaEliminada] = useState(false);
     
+    const eliminarTarea = async (evento) => {
+        evento.preventDefault();
+        try {
+            const response = await fetch(`https://playground.4geeks.com/todo/todos/${tarea.id}`,{
+                method: 'DELETE',
+               
+            });
+            if (response.ok) {
+              setTareaEliminada(true);
+              eliminandoTarea(tarea.id);
+               
+              
+            } else {
+                throw new Error('Error al eliminar la tarea');
+            }
+        } catch (error) {
+            console.log('Error al eliminar la tarea:', error);
+        }
+        
+    };
+
     const enviarFormulario = async (evento) => {
         evento.preventDefault();
         try {
@@ -33,6 +54,9 @@ const Tarea = ({ tarea, editandoTarea }) => {
       
     };
   
+    if (tareaEliminada) {
+        return null;
+    }
     
     return (
         <li className="listaTareaTarea">
@@ -45,14 +69,14 @@ const Tarea = ({ tarea, editandoTarea }) => {
                       
                         >
                     </input>
-                    <button className="actualizarTareaBoton" onClick={enviarFormulario}><i class="fa-solid fa-check"></i></button>
+                    <button className="actualizarTareaBoton"><i class="fa-solid fa-check"></i></button>
                 </form>
                 :
                 tarea.label
             }
 
             <div className="listaTareasBotones">
-                <button className="botonEliminar" onClick={() => {setTareaEliminada(!tareaEliminada)}}><i className="fa-solid fa-trash"></i></button>
+                <button className="botonEliminar" onClick={eliminarTarea}><i className="fa-solid fa-trash"></i></button>
                 <button className="botonEditar" onClick={() => { setEditarTarea(!editarTarea) }}><i className="fa-solid fa-pen-to-square"></i></button>
             </div>
         </li>
