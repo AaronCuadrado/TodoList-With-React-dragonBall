@@ -1,12 +1,115 @@
+body {
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/567/608/948/dragon-ball-dragon-ball-z-island-house-palm-trees-hd-wallpaper-preview.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Creepster', cursive;
+    color: #FFCC00;
+    text-shadow: 2px 2px 4px #000000;
+}
 
-/* 
+.header{
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.header_title {
+    font-size: 3rem;
+    color: #FF6F00;
+    text-shadow: 3px 3px 6px #000000;
+}
 
-*/
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.477);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px #FF6F00;
+}
+
+.formularioTareas {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.formularioTareasInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid #FF6F00;
+    border-radius: 8px;
+    background-color: #222;
+    color: #FFCC00;
+}
+
+.listaTareas{
+    list-style: none;
+    padding: 0;
+}
+
+.listaTareaTarea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #333;
+    border: 2px solid #FF6F00;
+    border-radius: 8px;
+    color: #FFCC00;
+    text-shadow: 2px 2px 4px #000000;
+}
+.listaTareasBotones{
+    background: none;
+    border: none;
+    color: #FFCC00;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.botonEliminar {
+    color: #ff0101;
+    background: none;
+    border: none;
+}
+
+.botonEditar {
+    color: #FF6F00;
+    background: none;
+    border: none;
+}
+.actualizarTarea {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.editarTareaInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid #FF6F00;
+    border-radius: 8px;
+    background-color: #222;
+    color: #FFCC00;
+}
+
+.actualizarTareaBoton {
+    background: none;
+    border: none;
+    color: #00FF00;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.listaTareasMensaje {
+    color: #FFCC00;
+    text-align: center;
+    font-size: 1.5rem;
+    text-align: 2px 2px 4px #000000;
+}
+
