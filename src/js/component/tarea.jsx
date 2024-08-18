@@ -54,7 +54,7 @@ const Tarea = ({ tarea, editandoTarea, eliminandoTarea }) => {
       
     };
   
-    if (tareaEliminada) {
+    if (tareaEliminada === true) {
         return null;
     }
     
@@ -69,7 +69,7 @@ const Tarea = ({ tarea, editandoTarea, eliminandoTarea }) => {
                       
                         >
                     </input>
-                    <button className="actualizarTareaBoton"><i class="fa-solid fa-check"></i></button>
+                    <button className="actualizarTareaBoton"><i className="fa-solid fa-check"></i></button>
                 </form>
                 :
                 tarea.label
